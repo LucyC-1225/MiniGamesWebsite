@@ -5,18 +5,20 @@
 		<link href="style.css" rel="stylesheet" type="text/css"/>
 		<script src="tictactoescript.js"></script>
 	</head>
-	<body>
+	<body onload = "initialize();">
         <!--Nav Bar-->
         <h3><a href = "index.html">Home Page</a></h3>
 
         <!--Setting up-->
         <h1>Welcome to Tic Tac Toe!</h1>
         <h3>Please select the mode:</h3>
-        <button>Human Player vs AI</button>
-        <button>Two Human Players</button>
-        <button>Start</button>
-        <h3>Current mode selected: </h3>
-        <h3>Current Turn: </h3> <!--Note: Randomize the turns and ask player 1 if they want x or o-->
+        <button onclick="setMode(1);">Human Player vs AI</button>
+        <button onclick="setMode(2);">Two Human Players</button>
+        <h3 id = "modeLabel">Current mode selected: </h3>
+
+        <button onclick="startGame();">Start Game</button>
+        
+        <h3 id = "currentTurnLabel">Current Turn: </h3> <!--Note: Randomize the turns and ask player 1 if they want x or o-->
         
         <!-- Tic Tac Toe Board -->
         <!--
@@ -24,14 +26,18 @@
             | 4 | | 5 | | 6 |
             | 7 | | 8 | | 9 |
         -->
-        <a><img id = "1" src = ""></a>
-        <a><img id = "2" src = ""></a>
-        <a><img id = "3" src = ""></a>
-        <a><img id = "4" src = ""></a>
-        <a><img id = "5" src = ""></a>
-        <a><img id = "6" src = ""></a>
-        <a><img id = "7" src = ""></a>
-        <a><img id = "8" src = ""></a>
-        <a><img id = "9" src = ""></a>
+        <div id = "board-container">
+            <div id = "board">
+                <a class = "square" onclick="changeDisplay('1');"><img id = "1" src = "Images/blank.png"></a>
+                <a class = "square" onclick="changeDisplay('2');"><img id = "2" src = "Images/blank.png"></a>
+                <a class = "square" onclick="changeDisplay('3');"><img id = "3" src = "Images/blank.png"></a>
+                <a class = "square" onclick="changeDisplay('4');"><img id = "4" src = "Images/blank.png"></a>
+                <a class = "square" onclick="changeDisplay('5');"><img id = "5" src = "Images/blank.png"></a>
+                <a class = "square" onclick="changeDisplay('6');"><img id = "6" src = "Images/blank.png"></a>
+                <a class = "square" onclick="changeDisplay('7');"><img id = "7" src = "Images/blank.png"></a>
+                <a class = "square" onclick="changeDisplay('8');"><img id = "8" src = "Images/blank.png"></a>
+                <a class = "square" onclick="changeDisplay('9');"><img id = "9" src = "Images/blank.png"></a>
+            </div>
+        </div>
 	</body>
 </html>
