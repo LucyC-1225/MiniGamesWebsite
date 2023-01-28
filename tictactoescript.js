@@ -1,4 +1,6 @@
 let mode, player1Name, player2Name, currentTurn, modeLabel, currentTurnLabel;
+const inputArr = [];
+const scoreArr = [-1, -1, -1, -1, -1, -1, -1, -1, -1];
 
 function initialize() {
     mode = -1;
@@ -16,15 +18,57 @@ function initialize() {
 }
 
 function changeDisplay(buttonNum) {
-    if (currentTurn === 1) {
-        eval("img" + buttonNum).src = "Images/O.png";
-        currentTurn = 2;
-        currentTurnLabel.innerHTML = "Current Turn: " + player2Name;
-    } else {
-        eval("img" + buttonNum).src = "Images/X.png";
-        currentTurn = 1;
-        currentTurnLabel.innerHTML = "Current Turn: " + player1Name;
+    if (!inputArr.includes(buttonNum)) {
+        if (currentTurn === 1) {
+            eval("img" + buttonNum).src = "Images/O.png";
+            currentTurn = 2;
+            currentTurnLabel.innerHTML = "Current Turn: " + player2Name;
+            scoreArr[buttonNum - 1] = 1;
+        } else {
+            eval("img" + buttonNum).src = "Images/X.png";
+            currentTurn = 1;
+            currentTurnLabel.innerHTML = "Current Turn: " + player1Name;
+            scoreArr[buttonNum - 1] = 2;
+        }
+        inputArr.push(buttonNum);
+        
+        // check if anyone has won yet
+        let winner = checkWin();
+        if (winner === 1) {
+            alert("Congrats!!!! " + player1Name + " has won!");
+        } else if (winner === 2) {
+            alert("Congrats!!!! " + player2Name + " has won!");
+        }
     }
+}
+
+// returns the player that won (1 or 2) or -1 if no win yet
+function checkWin() {
+    /*
+    | 1 | | 2 | | 3 |
+    | 4 | | 5 | | 6 |
+    | 7 | | 8 | | 9 |
+    */
+   //rows
+   if (scoreArr[0] == scoreArr[1] && scoreArr[1] == scoreArr[2]) {
+    return scoreArr[0];
+   } else if (scoreArr[3] == scoreArr[4] && scoreArr[4] == scoreArr[5]) {
+    return scoreArr[3];
+   } else if (scoreArr[6] == scoreArr[7] && scoreArr[7] == scoreArr[8]) {
+    return scoreArr[6];
+   } else if (scoreArr[0] == scoreArr[3] && scoreArr[3] == scoreArr[6]) { //columns
+    return scoreArr[0];
+   } else if (scoreArr[1] == scoreArr[4] && scoreArr[4] == scoreArr[7]) {
+    return scoreArr[1];
+   } else if (scoreArr[2] == scoreArr[5] && scoreArr[5] == scoreArr[8]) {
+    return scoreArr[2];
+   } else if (scoreArr[0] == scoreArr[4] && scoreArr[4] == scoreArr[8]) { //diagonal
+    return scoreArr[0];
+   } else if (scoreArr[2] == scoreArr[4] && scoreArr[4] == scoreArr[6]) { //diagonal
+    return scoreArr[2];
+   } else {
+    return -1;
+   }
 }
 
 function setMode(modeNum) {
