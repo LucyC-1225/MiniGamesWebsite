@@ -21,37 +21,222 @@ function initialize() {
 function changeDisplay(buttonNum) {
     if (isGameStart) {
         if (!inputArr.includes(buttonNum)) {
-            if (currentTurn === 1) {
+            if (mode == 2) { //2 humans mode
+                if (currentTurn === 1) {
+                    eval("img" + buttonNum).src = "Images/O.png";
+                    currentTurn = 2;
+                    currentTurnLabel.innerHTML = "Current Turn: " + player2Name;
+                    scoreArr[buttonNum - 1] = 1;
+                } else {
+                    eval("img" + buttonNum).src = "Images/X.png";
+                    currentTurn = 1;
+                    currentTurnLabel.innerHTML = "Current Turn: " + player1Name;
+                    scoreArr[buttonNum - 1] = 2;
+                }
+                inputArr.push(buttonNum);
+            } else { //AI mode
                 eval("img" + buttonNum).src = "Images/O.png";
-                currentTurn = 2;
                 currentTurnLabel.innerHTML = "Current Turn: " + player2Name;
                 scoreArr[buttonNum - 1] = 1;
-            } else {
-                eval("img" + buttonNum).src = "Images/X.png";
-                currentTurn = 1;
-                currentTurnLabel.innerHTML = "Current Turn: " + player1Name;
-                scoreArr[buttonNum - 1] = 2;
+                inputArr.push(buttonNum);
+                getGameResult();
+                
+                //bot move
+                if (isGameStart) {
+                    botMove();
+                }
             }
-            inputArr.push(buttonNum);
             
-            // check if anyone has won yet
-            let winner = checkWin();
-            if (winner === 1) {
-                alert("Congrats!!!! " + player1Name + " has won!");
-                reset();
-            } else if (winner === 2) {
-                alert("Congrats!!!! " + player2Name + " has won!");
-                reset();
-            } else if (winner === 3) {
-                alert("It is a tie!");
-                reset();
-            }
+            getGameResult();
         }
     } else {
         alert("Please start the game first");
     }
 }
 
+function botMove() {
+    setTimeout(() => {
+        /* check each row, column and diagonal, if there is two 1s, or 2s, the bot will make the move there */
+        let positionFound = false;
+        for (let i = 0; i < 9; i+=3) {
+            let negativeOneIndex = -1;
+            let negativeOneCount = 0;
+            let oneCount = 0;
+            if (scoreArr[i] == -1) {
+                negativeOneCount++;
+                negativeOneIndex = i;
+            }
+            if (scoreArr[i + 1] == -1) {
+                negativeOneCount++;
+                negativeOneIndex = i + 1;
+            }
+            if (scoreArr[i + 2] == -1) {
+                negativeOneCount++;
+                negativeOneIndex = i + 2;
+            }
+            if (scoreArr[i] == 1) {
+                oneCount++;
+            }
+            if (scoreArr[i + 1] == 1) {
+                oneCount++;
+            }
+            if (scoreArr[i + 2] == 1) {
+                oneCount++;
+            }
+            if (negativeOneCount == 1) {
+                if (oneCount == 2 || oneCount == 0) {
+                    eval("img" + (negativeOneIndex + 1)).src = "Images/X.png";
+                    scoreArr[negativeOneIndex] = 2;
+                    positionFound = true;
+                    inputArr.push(negativeOneIndex + 1);
+                    break;
+                }
+            }
+        }
+        if (!positionFound) {
+            for (let i = 0; i < 3; i++) {
+                let negativeOneIndex = -1;
+                let negativeOneCount = 0;
+                let oneCount = 0;
+                if (scoreArr[i] == -1) {
+                    negativeOneCount++;
+                    negativeOneIndex = i;
+                }
+                if (scoreArr[i + 3] == -1) {
+                    negativeOneCount++;
+                    negativeOneIndex = i + 3;
+                }
+                if (scoreArr[i + 6] == -1) {
+                    negativeOneCount++;
+                    negativeOneIndex = i + 6;
+                }
+                if (scoreArr[i] == 1) {
+                    oneCount++;
+                }
+                if (scoreArr[i + 3] == 1) {
+                    oneCount++;
+                }
+                if (scoreArr[i + 6] == 1) {
+                    oneCount++;
+                }
+                if (negativeOneCount == 1) {
+                    if (oneCount == 2 || oneCount == 0) {
+                        eval("img" + (negativeOneIndex + 1)).src = "Images/X.png";
+                        scoreArr[negativeOneIndex] = 2;
+                        positionFound = true;
+                        inputArr.push(negativeOneIndex + 1);
+                        break;
+                    }
+                }
+            }
+        }
+        if (!positionFound) {
+            let negativeOneIndex = -1;
+            let negativeOneCount = 0;
+            let oneCount = 0;
+
+            if (scoreArr[0] == -1) {
+                negativeOneCount++;
+                negativeOneIndex = 0;
+            }
+            if (scoreArr[4] == -1) {
+                negativeOneCount++;
+                negativeOneIndex = 4;
+            }
+            if (scoreArr[8] == -1) {
+                negativeOneCount++;
+                negativeOneIndex = 8;
+            }
+            if (scoreArr[0] == 1) {
+                oneCount++;
+            }
+            if (scoreArr[4] == 1) {
+                oneCount++;
+            }
+            if (scoreArr[8] == 1) {
+                oneCount++;
+            }
+            if (negativeOneCount == 1) {
+                if (oneCount == 2 || oneCount == 0) {
+                    eval("img" + (negativeOneIndex + 1)).src = "Images/X.png";
+                    scoreArr[negativeOneIndex] = 2;
+                    positionFound = true;
+                    inputArr.push(negativeOneIndex + 1);
+                }
+            }
+        }
+        if (!positionFound) {
+            let negativeOneIndex = -1;
+            let negativeOneCount = 0;
+            let oneCount = 0;
+
+            if (scoreArr[2] == -1) {
+                negativeOneCount++;
+                negativeOneIndex = 2;
+            }
+            if (scoreArr[4] == -1) {
+                negativeOneCount++;
+                negativeOneIndex = 4;
+            }
+            if (scoreArr[6] == -1) {
+                negativeOneCount++;
+                negativeOneIndex = 6;
+            }
+            if (scoreArr[2] == 1) {
+                oneCount++;
+            }
+            if (scoreArr[4] == 1) {
+                oneCount++;
+            }
+            if (scoreArr[6] == 1) {
+                oneCount++;
+            }
+            if (negativeOneCount == 1) {
+                if (oneCount == 2 || oneCount == 0) {
+                    eval("img" + (negativeOneIndex + 1)).src = "Images/X.png";
+                    scoreArr[negativeOneIndex] = 2;
+                    positionFound = true;
+                    inputArr.push(negativeOneIndex + 1);
+                }
+            }
+        }
+        if (!positionFound) { //if there is no good move, randomize
+            let numLeftArr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+            console.log("Input Arr: " + inputArr);
+            for (let i = 0; i < numLeftArr.length; i++) {
+                if (inputArr.includes(numLeftArr[i])) {
+                    console.log(i);
+                    numLeftArr.splice(i, 1);
+                    i--;
+                }
+            }
+            let randIndex = numLeftArr[getRandomInt(numLeftArr.length)];
+            eval("img" + (randIndex)).src = "Images/X.png";
+            scoreArr[randIndex - 1] = 2;
+            positionFound = true;
+            inputArr.push(randIndex);
+            console.log("Num Left Arr: " + numLeftArr);
+        }
+        currentTurnLabel.innerHTML = "Current Turn: " + player1Name;
+        getGameResult();
+    }, 2000);
+}
+
+function getGameResult() {
+    // check if anyone has won yet
+    let winner = checkWin();
+    if (winner === 1) {
+        alert("Congrats!!!! " + player1Name + " has won!");
+        reset();
+    } else if (winner === 2) {
+        alert("Congrats!!!! " + player2Name + " has won!");
+        reset();
+    } else if (winner === 3) {
+        alert("It is a tie!");
+        reset();
+    }
+}
 function reset() {
     isGameStart = false;
     currentTurnLabel.innerHTML = "Current Turn: ";
@@ -112,6 +297,9 @@ function startGame() {
             player1Name = prompt("What is your name?");
             player2Name = "AI";
             flipCoin();
+            if (currentTurn == 2) {
+                botMove();
+            }
         } else { // Two Player mode
             player1Name = prompt("What is player 1's name?");
             player2Name = prompt("What is player 2's name?"); //must have different names
