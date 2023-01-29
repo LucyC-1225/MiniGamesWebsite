@@ -5,20 +5,22 @@
 		<link href="style.css" rel="stylesheet" type="text/css"/>
 		<script src="tictactoescript.js"></script>
 	</head>
-	<body onload = "initialize();">
-        <!--Nav Bar-->
-        <h3><a href = "index.html">Home Page</a></h3>
+	<body onload = "initialize();" class = "red-background">
+        <button class = "button" id = "homeButton" onclick = "window.location.href='index.html'">&lt Home Page</a></h3></button>
 
         <!--Setting up-->
-        <h1>Welcome to Tic Tac Toe!</h1>
-        <h3>Please select the mode:</h3>
-        <button onclick="setMode(1);">Human Player vs AI</button>
-        <button onclick="setMode(2);">Two Human Players</button>
-        <h3 id = "modeLabel">Current mode selected: </h3>
+        <div id = "setUp">
+            <h1 id = "welcomeMessage">Welcome to Tic Tac Toe!</h1>
+            <span>Please select the mode: </span>
+            <button class = "button" onclick="setMode(1);">Human Player vs AI</button>
+            <button class = "button" onclick="setMode(2);">Two Human Players</button>
+            <h3 id = "modeLabel">Current mode selected: </h3>
 
-        <button onclick="startGame();">Start Game</button>
+            <button class = "button" onclick="startGame();">Start Game</button>
+            
+            <h3 id = "currentTurnLabel">Current Turn: </h3>
+        </div>
         
-        <h3 id = "currentTurnLabel">Current Turn: </h3> <!--Note: Randomize the turns and ask player 1 if they want x or o-->
         
         <!-- Tic Tac Toe Board -->
         <!--
@@ -39,5 +41,6 @@
                 <a class = "square" onclick="changeDisplay('9');"><img id = "9" src = "Images/blank.png"></a>
             </div>
         </div>
+        <footer><h1>.</h1></footer>
 	</body>
 </html>

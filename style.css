@@ -1,3 +1,58 @@
+/*Home Page*/
+body {
+    height: 90vh;
+    margin: 0;
+    background-color: #a5a08d;
+}
+#home-background {
+    height: 80%;
+    border-style: solid;
+    border-color: #62594e;
+    border-radius: 10%;
+    border-width: 30px;
+    margin: 1%;
+    margin-bottom: -2%;
+    text-align: center;
+    background-color: #e5dfd1;
+    color: #91705d;
+    font-weight: bold;
+}
+a:visited {
+    color: #738074;
+}
+a:hover {
+    color: #9bb39d;
+}
+#gameList {
+    background-color: white;
+    margin: auto;
+    width: 70%;
+    height: 70%;
+    text-align: justify;
+    padding-left: 5%;
+    /*Make the list scrollable*/
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset; */
+}
+
+/*Tic tac toe Page*/
+.red-background {
+    background-color: #5B7C99;
+}
+h1, h2, h3, h4, h5, h6, span {
+    font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+}
+h1 {
+    font-size: 45px;
+}
+h2 {
+    font-size: 30px;
+}
+h3, span {
+    font-size: 20px;
+}
 #board-container {
     display: flex;
     justify-content: center;
@@ -18,5 +73,59 @@
 }
 .square:hover {
     cursor: pointer;
-    border-color: #8D9B6A;
+    /*border-color: #8D9B6A;*/
+    border-color: #FF4742;
+}
+
+#setUp {
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+
+.button {
+  background: #FF4742;
+  border: 1px solid #FF4742;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+.button:hover,
+.button:active {
+  background-color: #f5eceb;
+  background-position: 0 0;
+  color: #FF4742;
+}
+
+.button:active {
+  opacity: .5;
+}
+
+#homeButton {
+    margin: 1%;
+}
+
+#welcomeMessage {
+    margin-top: 0;
+}
+footer {
+    background-color: black;
 }
