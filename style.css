@@ -119,6 +119,15 @@ h3, span {
   opacity: .5;
 }
 
+.button:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}
+.button:disabled:hover {
+    background-color: gray;
+    color: white;
+}
+
 #homeButton {
     margin: 1%;
 }
@@ -126,6 +135,12 @@ h3, span {
 #welcomeMessage {
     margin-top: 0;
 }
+
+#cancelButtonContainer {
+    text-align: center;
+    margin-top: 1%;
+}
+
 footer {
     background-color: black;
 }

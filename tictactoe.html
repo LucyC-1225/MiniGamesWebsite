@@ -12,11 +12,11 @@
         <div id = "setUp">
             <h1 id = "welcomeMessage">Welcome to Tic Tac Toe!</h1>
             <span>Please select the mode: </span>
-            <button class = "button" onclick="setMode(1);">Human Player vs AI</button>
-            <button class = "button" onclick="setMode(2);">Two Human Players</button>
+            <button class = "button" onclick="setMode(1);" id = "mode1Button">Human Player vs AI</button>
+            <button class = "button" onclick="setMode(2);" id = "mode2Button">Two Human Players</button>
             <h3 id = "modeLabel">Current mode selected: </h3>
 
-            <button class = "button" onclick="startGame();">Start Game</button>
+            <button class = "button" onclick="startGame();" id = "startGameButton">Start Game</button>
             
             <h3 id = "currentTurnLabel">Current Turn: </h3>
         </div>
@@ -40,6 +40,9 @@
                 <a class = "square" onclick="changeDisplay(8);"><img id = "8" src = "Images/blank.png"></a>
                 <a class = "square" onclick="changeDisplay(9);"><img id = "9" src = "Images/blank.png"></a>
             </div>
+        </div>
+        <div id = "cancelButtonContainer">
+            <button class = "button" onclick="reset()">Cancel Current Game/Reset</button>
         </div>
         <footer><h1>.</h1></footer>
 	</body>

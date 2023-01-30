@@ -16,6 +16,10 @@ function initialize() {
     img7 = document.getElementById("7");
     img8 = document.getElementById("8");
     img9 = document.getElementById("9");
+
+    mode1Button = document.getElementById("mode1Button");
+    mode2Button = document.getElementById("mode2Button");
+    startGameButton = document.getElementById("startGameButton");
 }
 
 function changeDisplay(buttonNum) {
@@ -220,7 +224,7 @@ function botMove() {
         }
         currentTurnLabel.innerHTML = "Current Turn: " + player1Name;
         getGameResult();
-    }, 2000);
+    }, 500);
 }
 
 function getGameResult() {
@@ -244,6 +248,9 @@ function reset() {
     scoreArr = [-1, -1, -1, -1, -1, -1, -1, -1, -1];
     player1Name = "";
     player2Name = "";
+    mode1Button.disabled = false;
+    mode2Button.disabled = false;
+    startGameButton.disabled = false;
 }
 // returns the player that won (1 or 2) or -1 if no win yet or 3 if it is a tie
 function checkWin() {
@@ -291,6 +298,11 @@ function startGame() {
         alert("Please select a mode first");
     } else {
         isGameStart = true;
+        /* Disable the other buttons */
+        mode1Button.disabled = true;
+        mode2Button.disabled = true;
+        startGameButton.disabled = true;
+
         resetBoard();
         // AI mode
         if (mode === 1) {
