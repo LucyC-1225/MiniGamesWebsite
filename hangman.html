@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Random Games Website</title>
+		<link href="style.css" rel="stylesheet" type="text/css"/>
+		<script src="hangmanscript.js"></script>
+	</head>
+	<body onload = "initialize();" class = "red-background">
+        <button class = "button button-blue" id = "homeButton" onclick = "window.location.href='index.html'">&lt Home Page</a></h3></button>
+        <div id = "sectionContainer">
+            <div id = "manSection"> <!--8 tries: hanger, head, body, 2 legs, 2 arms, dead face/-->
+
+            </div>
+            <div id = "letterSection"> <!--display grid-->
+                <div id = "guessContainer">
+                    
+                </div>
+                <div id = "lettersContainer">
+                    <button class = "button button-blue lettersItem" id = "aButton" onclick = "checkLetter('a');">a</button>
+                    <button class = "button button-blue lettersItem" id = "bButton" onclick = "checkLetter('b');">b</button>
+                    <button class = "button button-blue lettersItem" id = "cButton" onclick = "checkLetter('c');">c</button>
+                    <button class = "button button-blue lettersItem" id = "dButton" onclick = "checkLetter('d');">d</button>
+                    <button class = "button button-blue lettersItem" id = "eButton" onclick = "checkLetter('e');">e</button>
+                    <button class = "button button-blue lettersItem" id = "fButton" onclick = "checkLetter('f');">f</button>
+                    <button class = "button button-blue lettersItem" id = "gButton" onclick = "checkLetter('g');">g</button>
+                    <button class = "button button-blue lettersItem" id = "hButton" onclick = "checkLetter('h');">h</button>
+                    <button class = "button button-blue lettersItem" id = "iButton" onclick = "checkLetter('i');">i</button>
+                    <button class = "button button-blue lettersItem" id = "jButton" onclick = "checkLetter('j');">j</button>
+                    <button class = "button button-blue lettersItem" id = "kButton" onclick = "checkLetter('k');">k</button>
+                    <button class = "button button-blue lettersItem" id = "lButton" onclick = "checkLetter('l');">l</button>
+                    <button class = "button button-blue lettersItem" id = "mButton" onclick = "checkLetter('m');">m</button>
+                    <button class = "button button-blue lettersItem" id = "nButton" onclick = "checkLetter('n');">n</button>
+                    <button class = "button button-blue lettersItem" id = "oButton" onclick = "checkLetter('o');">o</button>
+                    <button class = "button button-blue lettersItem" id = "pButton" onclick = "checkLetter('p');">p</button>
+                    <button class = "button button-blue lettersItem" id = "qButton" onclick = "checkLetter('q');">q</button>
+                    <button class = "button button-blue lettersItem" id = "rButton" onclick = "checkLetter('r');">r</button>
+                    <button class = "button button-blue lettersItem" id = "sButton" onclick = "checkLetter('s');">s</button>
+                    <button class = "button button-blue lettersItem" id = "tButton" onclick = "checkLetter('t');">t</button>
+                    <button class = "button button-blue lettersItem" id = "uButton" onclick = "checkLetter('u');">u</button>
+                    <button class = "button button-blue lettersItem" id = "vButton" onclick = "checkLetter('v');">v</button>
+                    <button class = "button button-blue lettersItem" id = "wButton" onclick = "checkLetter('w');">w</button>
+                    <button class = "button button-blue lettersItem" id = "xButton" onclick = "checkLetter('x');">x</button>
+                    <button class = "button button-blue lettersItem" id = "yButton" onclick = "checkLetter('y');">y</button>
+                    <button class = "button button-blue lettersItem" id = "zButton" onclick = "checkLetter('z');">z</button>
+                </div>
+            </div>
+        </div>
+        <footer><h1>.</h1></footer>
+	</body>
+</html>

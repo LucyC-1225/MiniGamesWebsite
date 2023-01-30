@@ -17,6 +17,10 @@ body {
     color: #91705d;
     font-weight: bold;
 }
+a {
+    text-decoration: none;
+    color: #91705d;
+}
 a:visited {
     color: #738074;
 }
@@ -38,7 +42,7 @@ a:hover {
 }
 
 /*Tic tac toe Page*/
-.red-background {
+.blue-background {
     background-color: #5B7C99;
 }
 h1, h2, h3, h4, h5, h6, span {
@@ -143,4 +147,55 @@ h3, span {
 
 footer {
     background-color: black;
+}
+
+/* Hangman */
+.red-background {
+    background-color: #FF4742;
+}
+#sectionContainer {
+    display: flex;
+    height: 100vh;
+}
+#manSection {
+    width: 50%;
+    border-right: 3px solid #5B7C99;
+}
+#letterSection {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.button-blue {
+    background: #5B7C99;
+    border: 1px solid black;
+}
+
+.button-blue:hover,
+.button-blue:active {
+background-color: #f5eceb;
+background-position: 0 0;
+color: #5B7C99;
+}
+
+.button-blue:active {
+opacity: .5;
+}
+
+#guessContainer {
+    height: 50%;
+}
+#lettersContainer {
+    display: grid;
+    gap: 10px 10px;
+    grid-template-rows: 40px 40px 40px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    height: 50%;
+}
+
+.lettersItem {
+    width: 50px;
+    height: 40px;
 }
