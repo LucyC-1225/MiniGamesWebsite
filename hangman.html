@@ -7,13 +7,26 @@
 	</head>
 	<body onload = "initialize();" class = "red-background">
         <button class = "button button-blue" id = "homeButton" onclick = "window.location.href='index.html'">&lt Home Page</a></h3></button>
+        <div id = "setUp">
+            <h1 id = "welcomeMessage">Welcome to Hangman!</h1>
+            <span>Please select the mode: </span>
+            <button class = "button button-blue" onclick="setMode(1);" id = "mode1Button">Random Word Choice</button>
+            <button class = "button button-blue" onclick="setMode(2);" id = "mode2Button">Two Players</button>
+            <h3 id = "modeLabel">Current mode selected: </h3>
+
+            <button class = "button button-blue" onclick="startGame();" id = "startGameButtonHangman">Start Game</button>
+
+        </div>
+        
         <div id = "sectionContainer">
             <div id = "manSection"> <!--8 tries: hanger, head, body, 2 legs, 2 arms, dead face/-->
-
+                <img id = "hangmanImage">
             </div>
             <div id = "letterSection"> <!--display grid-->
                 <div id = "guessContainer">
-                    
+                    <div id = "letterGuessesDisplay">
+
+                    </div>
                 </div>
                 <div id = "lettersContainer">
                     <button class = "button button-blue lettersItem" id = "aButton" onclick = "checkLetter('a');">a</button>
