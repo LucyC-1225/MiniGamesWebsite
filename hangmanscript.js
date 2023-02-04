@@ -81,12 +81,13 @@ function setDefaultOutputArr() {
 }
 
 function reset() {
+    hangmanImage.src = "";
     mysteryWord = "";
     triesLeft = 8;
     removeAllCreatedh3();
     outputArr = [];
     /* LEFT OFF HERE: make it so that the hangman image goes back to nothing when it is reset */
-    hangmanImage.src = "";
+    
 
     isGameStart = false;
     aButton.disabled = false;
