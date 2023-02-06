@@ -237,3 +237,69 @@ opacity: .5;
     height: auto;
     margin: auto;
 }
+
+
+/* Simon Says */
+.purple-background {
+    background-color: #8955a3;
+}
+
+#buttonContainer {
+    display: grid;
+    gap: 10px 10px;
+    grid-template-rows: 300px 300px;
+    grid-template-columns: 300px 300px;
+    align-items: center;
+    justify-items: center;
+}
+
+.simonButtonItems {
+    width: 100%;
+    height: 100%;
+}
+.simonButtonItems:hover {
+    border: white;
+    cursor: pointer;
+}
+#simonbutton1 {
+    background-color: #1a8a2d;
+}
+
+#simonbutton2 {
+    background-color: #FF4742;
+}
+
+#simonbutton3 {
+    background-color: #c26a23;
+}
+
+#simonbutton4 {
+    background-color: #397cc4;
+}
+
+.button-green {
+    background-color: #1b853a;
+    border: 1px solid black;
+}
+
+
+.button-green:hover,
+.button-green:active {
+background-color: #f5eceb;
+background-position: 0 0;
+color: #1b853a;
+}
+
+.button-blue:active {
+opacity: .5;
+}
+
+#simonGameContainer {
+    display: flex;
+    justify-content: center;
+}
+
+#countLabel {
+    text-align: center;
+    color: white;
+}

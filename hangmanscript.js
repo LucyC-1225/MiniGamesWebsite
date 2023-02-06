@@ -86,8 +86,6 @@ function reset() {
     triesLeft = 8;
     removeAllCreatedh3();
     outputArr = [];
-    /* LEFT OFF HERE: make it so that the hangman image goes back to nothing when it is reset */
-    
 
     isGameStart = false;
     aButton.disabled = false;
