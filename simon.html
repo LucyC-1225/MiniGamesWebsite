@@ -11,17 +11,17 @@
             <h1 id = "welcomeMessage">Welcome to Simon Says!</h1>
             <button class = "button button-green" onclick="startGame();" id = "startGameButtonHangman">Start Game</button>
         </div>
-        <h3 id = "countLabel">Current Count: </h3>
+        <h3 id = "countLabel">Current round: 1</h3>
         <div id = "simonGameContainer">
             <!--
                 |   1  |   |  2   |
                 |   3  |   |  4   |
             -->
             <div id = "buttonContainer">
-                <button id = "simonbutton1" class = "simonButtonItems"></button>
-                <button id = "simonbutton2" class = "simonButtonItems"></button>
-                <button id = "simonbutton3" class = "simonButtonItems"></button>
-                <button id = "simonbutton4" class = "simonButtonItems"></button>
+                <button id = "simonbutton1" class = "simonButtonItems" onclick="checkButton(1)"></button>
+                <button id = "simonbutton2" class = "simonButtonItems" onclick="checkButton(2)"></button>
+                <button id = "simonbutton3" class = "simonButtonItems" onclick="checkButton(3)"></button>
+                <button id = "simonbutton4" class = "simonButtonItems" onclick="checkButton(4)"></button>
             </div>
         </div>
         <footer><h1>.</h1></footer>
