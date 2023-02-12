@@ -303,3 +303,7 @@ opacity: .5;
     text-align: center;
     color: white;
 }
+
+.glow {
+    box-shadow: 0px 0px 40px 20px #0ff;
+}
