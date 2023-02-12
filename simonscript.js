@@ -1,10 +1,11 @@
 currentPatternArr = [];
 //what the user inputs after the pattern is lit up
 currentUserPatternArr = [];
-let roundNumber;
+let roundNumber, isDoneDisplaying;
 
 function initialize() {
     roundNumber = 1;
+    isDoneDisplaying = false;
     countLabel = document.getElementById("countLabel");
     simonbutton1 = document.getElementById("simonbutton1");
     simonbutton2 = document.getElementById("simonbutton2");
@@ -32,14 +33,22 @@ function startGame() {
     addToPattern();
 }
 
-async function addToPattern() {
+function addToPattern() {
+    isDoneDisplaying = false;
     currentPatternArr.push(getRandomInt(4) + 1);
-    await displayAllPatterns();
+    displayAllPatterns();
     //TO DO: this should only execute after the displayAllPatterns function is done
-    simonbutton1.disabled = false;
-    simonbutton2.disabled = false;
-    simonbutton3.disabled = false;
-    simonbutton4.disabled = false;
+    function waitForIt(){
+        if (!isDoneDisplaying) {
+            setTimeout(waitForIt, 100);
+        } else {
+            simonbutton1.disabled = false;
+            simonbutton2.disabled = false;
+            simonbutton3.disabled = false;
+            simonbutton4.disabled = false;
+        };
+    }
+    waitForIt();
 }
 
 function getRandomInt(max) {
@@ -62,6 +71,10 @@ function displayAllPatterns() {
             }, parseInt((i + 1) + "000") / 2);
             setTimeout(() => {
                 currentButton.classList.remove("glow");
+                if (i == currentPatternArr.length - 1) {
+                    isDoneDisplaying = true;
+                    console.log(isDoneDisplaying);
+                }
             }, parseInt((i + 2) + "000") / 2);
         }, parseInt((i + 1) + "000") / 2);
     }
@@ -69,6 +82,7 @@ function displayAllPatterns() {
 
 function reset() {
     roundNumber = 1;
+    isDoneDisplaying = false;
     currentPatternArr = [];
     currentUserPatternArr = [];
     countLabel.innerHTML = "Current round: 1";
