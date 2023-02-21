@@ -1,0 +1,254 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Random Games Website</title>
+		<link href="style.css" rel="stylesheet" type="text/css"/>
+		<script src="battleshipscript.js"></script>
+	</head>
+	<body onload = "initialize();" class = "green-background">
+        <button class = "button button-purple" id = "homeButton" onclick = "window.location.href='index.html'">&lt Home Page</a></h3></button>
+        <div id = "setUp">
+            <h1 id = "welcomeMessage">Welcome to Battleship!</h1>
+        </div>
+
+        <div id = "setUpGrid">
+            <button class = "button button-purple" onclick="randomizeBoard()">Randomize Placement</button>
+            <button class = "button button-purple" onclick="startGame();" id = "startGameButtonBattleship">Start Game</button>
+        </div>
+
+        <div id = "battleshipGameSection">
+            <div id = "leftSection">
+                <h3>Your Grid</h3>
+                <div class = "battleshipBoardContainer">
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                </div>
+            </div>
+    
+            <div id = "rightSection">
+                <h3>AI Grid</h3>
+                <div class = "battleshipBoardContainer">
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                    <button class = "waterBox"></button>
+                </div>
+            </div>
+        </div>
+        <!--Have the game already randomized when the page loads and the user can randomize again if they want to-->
+        
+        <footer><h1>.</h1></footer>
+	</body>
+</html>
