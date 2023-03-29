@@ -7,7 +7,7 @@ function initialize() {
     mysteryWord = "";
     triesLeft = 8;
     isGameStart = false;
-    console.log(mysteryWord)
+
     modeLabel = document.getElementById("modeLabel");
     letterGuessesDisplay = document.getElementById("letterGuessesDisplay");
     hangmanImage = document.getElementById("hangmanImage");
@@ -58,6 +58,7 @@ function startGame() {
         if (mode == 1) {
             // choose random word from list
             mysteryWord = getRandomWord();
+            console.log(mysteryWord)
             setDefaultOutputArr();
             alert("Guess the random word before the poor man is hanged! Good luck~");
             createDefaultElements();
